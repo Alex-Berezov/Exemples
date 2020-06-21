@@ -1,0 +1,1772 @@
+<main>
+  
+  <article>
+    
+    <form method="POST" id="megaCalck" action="<?php echo esc_url( admin_url(  'admin-ajax.php/?action=fani_send_mail_action' ) ) ?>" enctype="multipart/form-data">
+      <!-- Mega Calck Main Screen -->
+      <section class="megaCalck_mainScreen" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/megaCalck_bg.png) no-repeat top fixed;">
+        <div class="wrapper">
+          <div class="mainScreen_title">
+            <h1>калькулятор лестницы <br> "под ключ"</h1>
+            <div class="vertical_hr"></div>
+            <div class="mouse">
+              <a href="#start">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/dash.png" >
+              </a>
+            </div>
+          </div>
+          <a name="start"></a>
+          <div class="secondScreen_title">
+            <h1>тип лестницы</h1>
+          </div>
+        </div>
+      </section>
+      <!-- End Mega Calck Main Screen -->
+
+      <!-- Stairs type -->
+      <section class="stairs_type">
+        <div class="wrapper">
+          <div class="type_of_stairs">
+            <div class="type_of_stairs_items">
+              <label for="selectMettalType">
+                <a class="selectMettalType typeOfStairsSelected" href="#slide_1">
+                  <div class="head">
+                    <input class="type_of_stairs" type="radio" name="type_of_stairs" value="На металлокаркасе" id="selectMettalType" checked>
+                    <span><p></p></span>
+                    <div class="title">
+                      на металлокаркасе
+                      <p>Лестницы на металлическом каркасе</p>
+                    </div>
+                  </div>
+                  <div class="image">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/type_of_stairs_1.png" alt="">
+                  </div>
+                </a>
+              </label>
+              <label for="woodType">
+                <a href="#slide_2">
+                  <div class="head">
+                    <input class="type_of_stairs" type="radio" name="type_of_stairs" value="Деревянная" id="woodType">
+                    <span></span>
+                    <div class="title">
+                      деревянная
+                      <p>Лестницы на деревянном каркасе</p>
+                    </div>
+                  </div>
+                  <div class="image">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/type_of_stairs_2.png" alt="">
+                  </div>
+                </a>
+              </label>
+              <label for="selectMonoType">
+                <a class="selectMonoType" href="#slide_3">
+                  <div class="head">
+                    <input class="type_of_stairs" type="radio" name="type_of_stairs" value="Монолитная" id="selectMonoType">
+                    <span></span>
+                    <div class="title">
+                      монолитная
+                      <p>Лестницы на бетонном основании</p>
+                    </div>
+                  </div>
+                  <div class="image">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/type_of_stairs_3.png" alt="">
+                  </div>
+                </a>
+              </label>
+              <label for="bolzType">
+                <a href="#slide_4">
+                  <div class="head">
+                    <input class="type_of_stairs" type="radio" name="type_of_stairs" value="На больцах" id="bolzType">
+                    <span></span>
+                    <div class="title">
+                      на больцах
+                      <p>Лестницы на металических больцах</p>
+                    </div>
+                  </div>
+                  <div class="image">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/type_of_stairs_4.png" alt="">
+                  </div>
+                </a>
+              </label>
+              
+              <div class="type_of_stairs_mob_slide owl-carousel">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/type_of_stairs_1.png" alt="" data-hash="slide_1">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/type_of_stairs_2.png" alt="" data-hash="slide_2">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/type_of_stairs_3.png" alt="" data-hash="slide_3">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/type_of_stairs_4.png" alt="" data-hash="slide_4">
+              </div>
+            </div>
+            <div class="type_of_stairs_checkboxes">
+              <label for="calc_price" class="calc_price">
+                <input type="checkbox" name="calc_price" value="Рассчитать стоимость каркаса" id="calc_price" checked>
+                <span><p></p></span>
+                <p>Рассчитать стоимость каркаса</p>
+              </label>
+              <label for="calc_price_mono" class="calc_price_mono">
+                <input type="checkbox" name="calc_price_mono" value="Рассчитать стоимость заливки  основания" id="calc_price_mono" checked>
+                <span><p></p></span>
+                <p>Рассчитать стоимость заливки  основания</p>
+              </label>
+            </div>            
+          </div>
+          <div class="frame_type calc_price_checked">
+            <div class="frame_type_title">
+              Выберите тип каркаса
+            </div>
+            <div class="frame_type_items">
+              <label>
+                <div class="image frameTypeSelected">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/frame_type_1.png" alt="">
+                </div>
+                <div class="chosen_type">
+                  <input class="chosen_type_input" type="radio" name="frame_type" value="На косоуре" checked>
+                  <span><p></p></span>
+                  <p>На косоуре</p>
+                </div>
+              </label>
+              <label>
+                <div class="image">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/frame_type_2.png" alt="">
+                </div>
+                <div class="chosen_type">
+                  <input class="chosen_type_input" type="radio" name="frame_type" value="На ломаной тетиве">
+                  <span><p></p></span>
+                  <p>На ломаной тетиве</p>
+                </div>
+              </label>
+              <label>
+                <div class="image">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/frame_type_3.png" alt="">
+                </div>
+                <div class="chosen_type">
+                  <input class="chosen_type_input" type="radio" name="frame_type" value="На ломаном косоуре">
+                  <span><p></p></span>
+                  <p>На ломаном косоуре</p>
+                </div>
+              </label>
+              <label>
+                <div class="image">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/frame_type_4.png" alt="">
+                </div>
+                <div class="chosen_type">
+                  <input class="chosen_type_input" type="radio" name="frame_type" value="На ломаном монокосоуре">
+                  <span><p></p></span>
+                  <p>На ломаном монокосоуре</p>
+                </div>
+              </label>
+              <label>
+                <div class="image">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/frame_type_5.png" alt="">
+                </div>
+                <div class="chosen_type">
+                  <input class="chosen_type_input" type="radio" name="frame_type" value="На прямом монокосоуре">
+                  <span><p></p></span>
+                  <p>На прямом монокосоуре</p>
+                </div>
+              </label>
+              <label>
+                <div class="image">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/frame_type_6.png" alt="">
+                </div>
+                <div class="chosen_type">
+                  <input class="chosen_type_input" type="radio" name="frame_type" value="На тетиве">
+                  <span><p></p></span>
+                  <p>На тетиве</p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Stairs type -->
+
+      <!-- Form of stairs -->
+      <section class="form_stairs">
+        <div class="wrapper">
+          <div class="form_stairs_select">
+            <div class="form_stairs_select_mob_title">
+              <p>форма</p>
+            </div>
+            <div class="display">
+              <div class="display_item is_activeItem tab-1">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_1.png" alt="">
+                <p>Одномаршевая лестница 1</p>
+              </div>
+              <div class="display_item tab-2">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_2.png" alt="">
+                <p>Одномаршевая лестница 2</p>
+              </div>
+              <div class="display_item tab-3">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_3.png" alt="">
+                <p>Одномаршевая лестница 3</p>
+              </div>
+              <div class="display_item tab-4">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_4.png" alt="">
+                <p>Одномаршевая лестница 4</p>
+              </div>
+              <div class="display_item tab-5">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_5.png" alt="">
+                <p>Одномаршевая лестница 5</p>
+              </div>
+              <div class="display_item tab-6">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_6.png" alt="">
+                <p>Одномаршевая лестница 6</p>
+              </div>
+              <div class="display_item tab-7">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_7.png" alt="">
+                <p>Одномаршевая лестница 7</p>
+              </div>
+              <div class="display_item tab-8">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_8.png" alt="">
+                <p>Одномаршевая лестница 8</p>
+              </div>
+              <div class="display_item tab-9">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_9.png" alt="">
+                <p>Одномаршевая лестница 9</p>
+              </div>
+              <div class="display_item tab-10">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_10.png" alt="">
+                <p>Одномаршевая лестница 10</p>
+              </div>
+              <div class="display_item tab-11">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_11.png" alt="">
+                <p>Одномаршевая лестница 11</p>
+              </div>
+              <div class="display_item tab-12">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_12.png" alt="">
+                <p>Одномаршевая лестница 12</p>
+              </div>
+              <div class="display_item tab-13">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_13.png" alt="">
+                <p>Одномаршевая лестница 13</p>
+              </div>
+              <div class="display_item tab-14">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_14.png" alt="">
+                <p>Одномаршевая лестница 14</p>
+              </div>
+              <div class="display_item tab-15">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_15.png" alt="">
+                <p>Одномаршевая лестница 15</p>
+              </div>
+              <div class="display_item tab-16">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_16.png" alt="">
+                <p>Одномаршевая лестница 16</p>
+              </div>
+              <div class="display_item tab-17">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_17.png" alt="">
+                <p>Одномаршевая лестница 17</p>
+              </div>
+              <div class="display_item tab-18">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_18.png" alt="">
+                <p>Одномаршевая лестница 18</p>
+              </div>
+              <div class="display_item tab-19">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_19.png" alt="">
+                <p>Одномаршевая лестница 19</p>
+              </div>
+              <div class="display_item tab-20">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_20.png" alt="">
+                <p>Одномаршевая лестница 20</p>
+              </div>
+              <div class="display_item tab-21">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_21.png" alt="">
+                <p>Одномаршевая лестница 21</p>
+              </div>
+              <div class="display_item tab-22">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_22.png" alt="">
+                <p>Одномаршевая лестница 22</p>
+              </div>
+              <div class="display_item tab-23">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_23.png" alt="">
+                <p>Одномаршевая лестница 23</p>
+              </div>
+              <div class="display_item tab-24">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_24.png" alt="">
+                <p>Одномаршевая лестница 24</p>
+              </div>
+              <div class="display_item tab-25">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_display_25.png" alt="">
+                <p>Одномаршевая лестница 25</p>
+              </div>
+            </div>
+            <div class="preview">
+              <label for="formStairs_1" class="preview_item is_activeItem" data-tab-name="tab-1">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_1.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница1" id="formStairs_1" checked>
+                <span class="is_activeInp"><p></p></span>
+              </label>
+              <label for="formStairs_2" class="preview_item" data-tab-name="tab-2">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_2.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница2" id="formStairs_2">
+                <span></span>
+              </label>
+              <label for="formStairs_3" class="preview_item" data-tab-name="tab-3">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_3.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница3" id="formStairs_3">
+                <span></span>
+              </label>
+              <label for="formStairs_4" class="preview_item" data-tab-name="tab-4">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_4.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница4" id="formStairs_4">
+                <span></span>
+              </label>
+              <label for="formStairs_5" class="preview_item" data-tab-name="tab-5">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_5.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница5" id="formStairs_5">
+                <span></span>
+              </label>
+              <label for="formStairs_6" class="preview_item" data-tab-name="tab-6">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_6.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница6" id="formStairs_6">
+                <span></span>
+              </label>
+              <label for="formStairs_7" class="preview_item" data-tab-name="tab-7">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_7.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница7" id="formStairs_7">
+                <span></span>
+              </label>
+              <label for="formStairs_8" class="preview_item" data-tab-name="tab-8">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_8.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница8" id="formStairs_8">
+                <span></span>
+              </label>
+              <label for="formStairs_9" class="preview_item" data-tab-name="tab-9">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_9.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница9" id="formStairs_9">
+                <span></span>
+              </label>
+              <label for="formStairs_10" class="preview_item" data-tab-name="tab-10">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_10.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница10" id="formStairs_10">
+                <span></span>
+              </label>
+              <label for="formStairs_11" class="preview_item" data-tab-name="tab-11">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_11.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница11" id="formStairs_11">
+                <span></span>
+              </label>
+              <label for="formStairs_12" class="preview_item" data-tab-name="tab-12">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_12.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница12" id="formStairs_12">
+                <span></span>
+              </label>
+              <label for="formStairs_13" class="preview_item" data-tab-name="tab-13">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_13.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница13" id="formStairs_13">
+                <span></span>
+              </label>
+              <label for="formStairs_14" class="preview_item" data-tab-name="tab-14">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_14.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница14" id="formStairs_14">
+                <span></span>
+              </label>
+              <label for="formStairs_15" class="preview_item" data-tab-name="tab-15">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_15.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница15" id="formStairs_15">
+                <span></span>
+              </label>
+              <label for="formStairs_16" class="preview_item" data-tab-name="tab-16">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_16.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница16" id="formStairs_16">
+                <span></span>
+              </label>
+              <label for="formStairs_17" class="preview_item" data-tab-name="tab-17">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_17.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница17" id="formStairs_17">
+                <span></span>
+              </label>
+              <label for="formStairs_18" class="preview_item" data-tab-name="tab-18">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_18.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница18" id="formStairs_18">
+                <span></span>
+              </label>
+              <label for="formStairs_19" class="preview_item" data-tab-name="tab-19">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_19.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница19" id="formStairs_19">
+                <span></span>
+              </label>
+              <label for="formStairs_20" class="preview_item" data-tab-name="tab-20">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_20.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница20" id="formStairs_20">
+                <span></span>
+              </label>
+              <label for="formStairs_21" class="preview_item" data-tab-name="tab-21">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_21.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница21" id="formStairs_21">
+                <span></span>
+              </label>
+              <label for="formStairs_22" class="preview_item" data-tab-name="tab-22">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_22.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница22" id="formStairs_22">
+                <span></span>
+              </label>
+              <label for="formStairs_23" class="preview_item" data-tab-name="tab-23">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_23.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница23" id="formStairs_23">
+                <span></span>
+              </label>
+              <label for="formStairs_24" class="preview_item" data-tab-name="tab-24">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_24.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница24" id="formStairs_24">
+                <span></span>
+              </label>
+              <label for="formStairs_25" class="preview_item" data-tab-name="tab-25">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/form_stairs_img_25.png" alt="">
+                <input type="radio" name="form_stairs_select_item" value="Одномаршевая лестница25" id="formStairs_25">
+                <span></span>
+              </label>
+            </div>
+          </div>
+          <div class="form_stairs_upload">
+            <div class="title">форма</div>
+            <p>
+              Выберите форму <br> 
+              <span>или</span><br>
+              загрузите собственный вариант
+            </p>
+            <div class="form_stairs_upload_btn">
+              <input type="file" name="uploadFile" id="upload" class="hide inputfile" value="Upload" data-multiple-caption="{count} files selected">
+              <label for="upload"><span>Выбрать файл</span></label>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Form of stairs -->
+
+      <!-- Dimensions -->
+      <section class="dimensions">
+        <div class="wrapper">
+          <div class="dimensions_title">
+            <h2>габариты</h2>
+          </div>
+          <div class="dimensions_content">
+            <div class="dimensions_content_img">
+              <img src="<?php bloginfo('template_directory'); ?>/assets/img/dimensions_content_img.png" alt="">
+            </div>
+            <div class="dimensions_content_selectors">
+              <div class="slidecontainer">
+                <p class="slideTitle"><span>A</span> - Высота до потолка</p>
+                <input type="text" name="heightToCeiling" value="2500" class="slider js-range-slider" id="myRange1">
+                <p class="slideFooter"><span id="demo1"></span>мм</p>
+              </div>
+              <div class="slidecontainer">
+                <p class="slideTitle"><span>B</span> - Толщина перекрытия</p>
+                <input type="text" name="thicknessOfSlab" value="2500" class="slider js-range-slider" id="myRange2">
+                <p class="slideFooter"><span id="demo2"></span>мм</p>
+              </div>
+              <div class="slidecontainer">
+                <p class="slideTitle"><span>C</span> - Длина проема второго этажа</p>
+                <input type="text" name="lengthOfSecondFloorOpening" value="2500" class="slider js-range-slider" id="myRange3">
+                <p class="slideFooter"><span id="demo3"></span>мм</p>
+              </div>
+              <div class="slidecontainer">
+                <p class="slideTitle"><span>D</span> - Ширина проема второго этажа</p>
+                <input type="text" name="widthOfSecondFloorOpening" value="2500" class="slider js-range-slider" id="myRange4">
+                <p class="slideFooter"><span id="demo4"></span>мм</p>
+              </div>
+            </div>
+          </div>
+          <div class="dimensions_footer">
+            <div class="dimensions_footer_info">
+              <img src="<?php bloginfo('template_directory'); ?>/assets/img/impIcon.png" alt="">
+              <p>
+                Если у Вас есть собственный проект, можете загрузить его отдельно.
+              </p>
+            </div>
+            <div class="dimensions_footer_upload_btn">
+              <input type="file" name="dimensions_uploadFile" id="dimensions_upload" class="hide inputfile2" data-multiple-caption="{count} files selected" multiple>
+              <label for="dimensions_upload"><span>Выбрать файл</span></label>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        /*Ion Range Slider*/
+        $(document).ready(function(){
+          $(".js-range-slider").ionRangeSlider({
+            skin: "big",
+            type: "single",
+            min: 10,
+            max: 5000,
+            from: 2500,
+            step: 10,
+            prettify_enabled: true
+          });
+        });
+        /*End Ion Range Slider*/
+      </script>
+      <!-- End Dimensions -->
+
+      <!-- Degrees -->
+      <section class="degrees" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/degrees_bg.png) no-repeat center fixed;">
+        <div class="degrees_cover">
+          <div class="wrapper">
+            <div class="degrees_left">
+              <img src="<?php bloginfo('template_directory'); ?>/assets/img/degrees_left_img.png" alt="">
+            </div>
+            <div class="degrees_right">
+              <div class="degrees_right_header">
+                <h2>ступеньки</h2>
+                <div class="degrees_right_mob_img">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/degrees_left_img.png" alt="">
+                </div>
+                <p>Выберите материал:</p>
+              </div>
+              <div class="select_material">
+                <div class="econom block">
+                  <p class="select_material_p">Эконом</p>
+                  <div class="select_material_items">
+                    <label for="selMat1" class="select_material_item is_activeItem" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/selMat1.png);">
+                      <p>Фанера</p>
+                      <div class="select_material_item_input">
+                        <input type="radio" name="selectedMaterial" id="selMat1" value="Фанера" checked>
+                        <span class="is_activeInput"><p></p></span>
+                      </div>
+                    </label>
+                    <label for="selMat2" class="select_material_item" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/selMat2.png);">
+                      <p>Сосна</p>
+                      <div class="select_material_item_input">
+                        <input type="radio" name="selectedMaterial" id="selMat2" value="Сосна">
+                        <span></span>
+                      </div>
+                    </label>
+                    <label for="selMat3" class="select_material_item" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/selMat3.png);">
+                      <p>Берёза</p>
+                      <div class="select_material_item_input">
+                        <input type="radio" name="selectedMaterial" id="selMat3" value="Берёза">
+                        <span></span>
+                      </div>
+                    </label>
+                    <label for="selMat4" class="select_material_item" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/selMat4.png);">
+                      <p>Ольха</p>
+                      <div class="select_material_item_input">
+                        <input type="radio" name="selectedMaterial" id="selMat4" value="Ольха">
+                        <span></span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="standart block">
+                  <div class="select_material_items">
+                    <p class="select_material_p">Стандарт</p>
+                    <label for="selMat10" class="select_material_item" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/selMat10.png);">
+                      <p>Лиственница</p>
+                      <div class="select_material_item_input">
+                        <input type="radio" name="selectedMaterial" id="selMat10" value="Лиственница">
+                        <span></span>
+                      </div>
+                    </label>
+                    <label for="selMat11" class="select_material_item" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/selMat11.png);">
+                      <p>Шпон дуба</p>
+                      <div class="select_material_item_input">
+                        <input type="radio" name="selectedMaterial" id="selMat11" value="Шпон дуба">
+                        <span></span>
+                      </div>
+                    </label>
+                    <label for="selMat12" class="select_material_item" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/selMat12.png);">
+                      <p>Бук</p>
+                      <div class="select_material_item_input">
+                        <input type="radio" name="selectedMaterial" id="selMat12" value="Бук">
+                        <span></span>
+                      </div>
+                    </label>
+                    <label for="selMat13" class="select_material_item" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/selMat13.png);">
+                      <p>Ясень</p>
+                      <div class="select_material_item_input">
+                        <input type="radio" name="selectedMaterial" id="selMat13" value="Ясень">
+                        <span></span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="premium block">
+                  <p class="select_material_p">Премиум</p>
+                  <div class="select_material_items">
+                    <label for="selMat5" class="select_material_item" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/selMat5.png);">
+                      <p>Массив дуба</p>
+                      <div class="select_material_item_input">
+                        <input type="radio" name="selectedMaterial" id="selMat5" value="Массив дуба">
+                        <span></span>
+                      </div>
+                    </label>
+                    <label for="selMat6" class="select_material_item" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/selMat6.png);">
+                      <p>Бук</p>
+                      <div class="select_material_item_input">
+                        <input type="radio" name="selectedMaterial" id="selMat6" value="Бук">
+                        <span></span>
+                      </div>
+                    </label>
+                    <label for="selMat7" class="select_material_item" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/selMat7.png);">
+                      <p>Ясень</p>
+                      <div class="select_material_item_input">
+                        <input type="radio" name="selectedMaterial" id="selMat7" value="Ясень">
+                        <span></span>
+                      </div>
+                    </label>
+                    <label for="selMat8" class="select_material_item" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/selMat8.png);">
+                      <p>Стекло</p>
+                      <div class="select_material_item_input">
+                        <input type="radio" name="selectedMaterial" id="selMat8" value="Стекло">
+                        <span></span>
+                      </div>
+                    </label>
+                    <label for="selMat9" class="select_material_item" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/selMat9.png);">
+                      <p>Камень</p>
+                      <div class="select_material_item_input">
+                        <input type="radio" name="selectedMaterial" id="selMat9" value="Камень">
+                        <span></span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="degrees_right_footer">
+                <div class="painting">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/painting.png" alt="">
+                  <div class="painting_info">
+                    <div class="painting_info_title">
+                      <p>Покраска</p>
+                      <input type="checkbox" name="painting" id="painting" value="- грунт + эмаль + лак" checked>
+                      <label for="painting"><p></p></label>
+                    </div>
+                    <div class="painting_info_body">
+                      <p>- морилка + лак</p>
+                      <p>- грунт + эмаль + лак</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="illumination">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/illumination.png" alt="">
+                  <div class="illumination_info">
+                    <div class="illumination_info_title">
+                      <p>Подсветка</p>
+                      <input type="checkbox" name="illumination" id="illumination" value="Умная">
+                      <label for="illumination"><p></p></label>
+                      <img src="<?php bloginfo('template_directory'); ?>/assets/img/question.png" alt="">
+                      <p class="tooltip">
+                        - ПРОСТАЯ включается и выключается выключателем, можно выбрать цвет и яркость.
+                        <br><br>
+                        - УМНАЯ включается датчиком движения, «следует» вверх-вниз за человеком, можно выбрать цвет и яркость.
+                      </p>
+                    </div>
+                    <div class="illumination_info_body">
+                      <p>- простая</p>
+                      <p>- умная</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Degrees -->
+
+      <!-- Risers -->
+      <section class="risers">
+        <div class="wrapper">
+          <div class="risers_title">
+            <h2>подступенки</h2>
+          </div>
+          <div class="risers_items">
+            <label for="risers1" class="risers_item">
+              <div class="risers_item_img">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/risers_item_img_1.png" alt="">
+              </div>
+              <div class="risers_item_input">
+                <input type="radio" name="risers" id="risers1" value="Лестница с подступенками" checked>
+                <span><p></p></span>
+                <p>Лестница с подступенками</p>
+              </div>
+            </label>
+            <label for="risers2" class="risers_item">
+              <div class="risers_item_img">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/img/risers_item_img_2.png" alt="">
+              </div>
+              <div class="risers_item_input">
+                <input type="radio" name="risers" id="risers2" value="Лестница без подступенок">
+                <span><p></p></span>
+                <p>Лестница без подступенок</p>
+              </div>
+            </label>
+          </div>
+        </div>
+      </section>
+      <!-- End Risers -->
+
+      <!-- Bowstring Stringer -->
+      <section class="bowstringStringer">
+        <div class="wrapper">
+          <div class="topBlock">
+            <h2>тетива, косоур</h2>
+            <div class="input_items">
+              <label for="input_1" class="input_item">
+                <div class="input_item_img">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/bowstringStringer_1.png" alt="">
+                </div>
+                <div class="input_item_block">
+                  <input type="radio" name="bowstringStringer" id="input_1" value="Тетива" checked>
+                  <span><p></p></span>
+                  <p>Тетива</p>
+                </div>
+              </label>
+              <label for="input_2" class="input_item">
+                <div class="input_item_img">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/bowstringStringer_2.png" alt="">
+                </div>
+                <div class="input_item_block">
+                  <input type="radio" name="bowstringStringer" id="input_2" value="Косоур">
+                  <span><p></p></span>
+                  <p>Косоур</p>
+                </div>
+              </label>
+              <label for="input_3" class="input_item">
+                <div class="input_item_img">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/bowstringStringer_3.png" alt="">
+                </div>
+                <div class="input_item_block">
+                  <input type="radio" name="bowstringStringer" id="input_3" value="Тетива и косоур">
+                  <span><p></p></span>
+                  <p>Тетива и косоур</p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="bowstringStringer_under"></div>
+      </section>
+      <!-- End Bowstring Stringer -->
+
+      <!-- Handrail -->
+      <section class="handrail" style="background: url(<?php bloginfo('template_directory'); ?>/assets/img/handrail_bg.png) no-repeat center fixed;">
+        <div class="wrapper">
+          <div class="handrail_row_1">
+            <div class="handrail_row_1_left">
+              <h2>ограждение</h2>
+              <p>Длина ограждения</p>
+              <input type="text" name="lengthOfFence" value="5" class="slider js-range-slider-handrail" id="handrailRange">
+              <p class="slideFooter"><span id="handrailDemo"></span>м.</p>
+            </div>
+            <div class="handrail_row_1_right">
+              <div class="inputs">
+                <div class="input row_1_nav__item row_1_nav_is_active" data-inp-name="inp_1">
+                  <input type="radio" name="handrail_row_1" id="handrail_row_1_input_1" value="Дерево" checked>
+                  <label for="handrail_row_1_input_1"><p></p></label>
+                  <p>Дерево</p>
+                </div>
+                <div class="input row_1_nav__item" data-inp-name="inp_2">
+                  <input type="radio" name="handrail_row_1" id="handrail_row_1_input_2" value="Металл">
+                  <label for="handrail_row_1_input_2"><p></p></label>
+                  <p>Металл</p>
+                </div>
+                <div class="input row_1_nav__item" data-inp-name="inp_3">
+                  <input type="radio" name="handrail_row_1" id="handrail_row_1_input_3" value="Стекло">
+                  <label for="handrail_row_1_input_3"><p></p></label>
+                  <p>Стекло</p>
+                </div>
+              </div>
+              <div class="carousels">
+                <div class="carousel_row_1 row_1_wood inp_1 row_1_nav_is_active">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_wood_1.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_wood_2.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_wood_3.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_wood_4.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_wood_5.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_wood_6.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_wood_7.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_wood_8.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_wood_9.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_wood_10.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_wood_11.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_wood_12.jpg" alt="">
+                </div>
+                <div class="carousel_row_1 row_1_metal inp_2">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_metal_1.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_metal_2.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_metal_3.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_metal_4.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_metal_5.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_metal_6.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_metal_7.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_metal_8.jpg" alt="">
+                </div>
+                <div class="carousel_row_1 row_1_glass inp_3">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_glass_1.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_glass_2.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_glass_3.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_glass_4.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_glass_5.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_glass_6.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_glass_7.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_glass_8.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="handrail_row_2">
+            <div class="handrail_row_2_left">
+              <div class="inputs">
+                <div class="input row_2_nav__item row_2_nav_is_active" data-input-name="inp2_1">
+                  <input type="radio" name="handrail_row_2" id="handrail_row_2_input_1" value="Дерево" checked>
+                  <label for="handrail_row_2_input_1"><p></p></label>
+                  <p>Дерево</p>
+                </div>
+                <div class="input row_2_nav__item" data-input-name="inp2_2">
+                  <input type="radio" name="handrail_row_2" id="handrail_row_2_input_2" value="Металл">
+                  <label for="handrail_row_2_input_2"><p></p></label>
+                  <p>Металл</p>
+                </div>
+              </div>
+              <div class="carousels_row2">
+                <div class="carousel_row_2 row_2_wood inp2_1 row_2_nav_is_active">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_row_2_wood_4.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_row_2_wood_2.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_row_2_wood_3.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_row_2_wood_1.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_row_2_wood_5.jpg" alt="">
+                </div>
+                <div class="carousel_row_2 row_2_metal inp2_2">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_row_2_metal_1.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_row_2_metal_2.jpg" alt="">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/handrail_row_2_metal_3.jpg" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="handrail_row_2_right">
+              <h2>поручень</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        /*Ion Range Slider*/
+        $(document).ready(function(){
+          $(".js-range-slider-handrail").ionRangeSlider({
+            skin: "big",
+            type: "single",
+            min: 1,
+            max: 15,
+            from: 5,
+            step: 1,
+            prettify_enabled: true
+          });
+        });
+        /*End Ion Range Slider*/
+
+        /*Carousel Row 1*/
+        let row1 = function () {
+            let row1Nav = document.querySelectorAll('.row_1_nav__item'),//tabNav
+                row1Content = document.querySelectorAll('.carousel_row_1'),//tabContent
+                row1Name;//tabName
+
+            row1Nav.forEach(item => {
+                item.addEventListener('click', selectRow1Nav)
+            });
+
+            function selectRow1Nav() {
+                row1Nav.forEach(item => {
+                    item.classList.remove('row_1_nav_is_active');
+                });
+                this.classList.add('row_1_nav_is_active');
+                row1Name = this.getAttribute('data-inp-name');
+                selectRow1Content(row1Name);
+            }
+
+            function selectRow1Content(row1Name) {
+                row1Content.forEach(item => {
+                    item.classList.contains(row1Name) ? item.classList.add('row_1_nav_is_active') : item.classList.remove('row_1_nav_is_active');
+                })
+            }
+
+        };
+        row1();
+        /*End Carousel Row 1*/
+
+        /*Carousel Row 2*/
+        let row2 = function () {
+            let row2Nav = document.querySelectorAll('.row_2_nav__item'),//tabNav
+                row2Content = document.querySelectorAll('.carousel_row_2'),//tabContent
+                row2Name;//tabName
+
+            row2Nav.forEach(item => {
+                item.addEventListener('click', selectRow2Nav)
+            });
+
+            function selectRow2Nav() {
+                row2Nav.forEach(item => {
+                    item.classList.remove('row_2_nav_is_active');
+                });
+                this.classList.add('row_2_nav_is_active');
+                row2Name = this.getAttribute('data-input-name');
+                selectRow2Content(row2Name);
+            }
+
+            function selectRow2Content(row2Name) {
+                row2Content.forEach(item => {
+                    item.classList.contains(row2Name) ? item.classList.add('row_2_nav_is_active') : item.classList.remove('row_2_nav_is_active');
+                })
+            }
+
+        };
+        row2();
+        /*End Carousel Row 2*/
+      </script>
+      <!-- End Handrail -->
+
+      <!-- Examples -->
+      <section class="examples">
+        <div class="wrapper">
+          <div class="examples_header">
+            <h2>Примеры наших работ</h2>
+            <p>
+              Наше производство лестниц работает с 1992 года в Санкт-Петербурге. За это время мы изготовили и смонтировали сотни лестниц. Выстовочные образцы вы можете увидить вживую в <a href="https://yeti-spb.ru/kontakty/">нашем шоу-руме.</a>
+            </p>
+          </div>        
+          <div class="examples_images">
+            <div class="gallery_col col_1">
+              <div class="gallery_row col_1_row_1">
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-1big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-1big.png" alt=""></a>
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-2big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-2big.png" alt=""></a>
+              </div>
+              <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-4big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-4big.png" alt="" class="col_1_row_2"></a>
+              <div class="gallery_row col_1_row_3">
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-17big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-17big.png" alt=""></a>
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-18big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-18big.png" alt=""></a>
+              </div>
+              <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-11big.jpg"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-11big.png" alt="" class="col_1_row_new"></a>
+            </div>
+            <div class="gallery_col col_2">
+              <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-20big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-20big.png" alt=""></a>
+              <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-3big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-3big.png" alt=""></a>
+              <div class="gallery_row col_2_row_3">
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-12big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-12big.png" alt=""></a>
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-13big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-13big.png" alt=""></a>
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-15gig.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-15big.png" alt=""></a>
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-2big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-2big.png" alt=""></a>
+              </div>
+            </div>
+            <div class="gallery_col col_3">
+              <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-5big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-5big.png" alt=""></a>
+              <div class="gallery_row col_3_row_2">
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-6big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-6big.png" alt=""></a>
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-7big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-7big.png" alt=""></a>
+              </div>
+              <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-19big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-19big.png" alt=""></a>
+              <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-9big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-9big.png" alt="" class="new_example"></a>
+            </div>
+            <div class="gallery_col col_4">
+              <div class="gallery_row col_4_row_1">
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-8big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-8big.png" alt=""></a>
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-9big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-9big.png" alt=""></a>
+              </div>
+              <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-10big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-10big.png" alt="" class="col_4_row_2"></a>
+              <div class="gallery_row col_4_row_3">
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-14big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-14big.png" alt=""></a>
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-16big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-16big.png" alt=""></a>
+              </div>
+              <div class="gallery_row col_4_row_4">
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-4big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-4big.png" alt=""></a>
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-17big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-17big.png" alt=""></a>
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-18big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-18big.png" alt=""></a>
+                <a data-fancybox-1="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-20big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-20big.png" alt=""></a>
+              </div>
+            </div>
+          </div>
+          <div class="mob_examples_images">
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-1big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/mob_examples_img-1.png" alt=""></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-2big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/mob_examples_img-2.png" alt=""></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-3big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/mob_examples_img-3.png" alt=""></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-4big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/mob_examples_img-4.png" alt=""></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-5big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/mob_examples_img-5.png" alt=""></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-6big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/mob_examples_img-6.png" alt=""></a>
+
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-7big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-7big.png" alt="" style="display: none;"></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-8big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-8big.png" alt="" style="display: none;"></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-9big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-9big.png" alt="" style="display: none;"></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-10big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-10big.png" alt="" style="display: none;"></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-11big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-11big.png" alt="" style="display: none;"></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-12big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-12big.png" alt="" style="display: none;"></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-13big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-13big.png" alt="" style="display: none;"></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-14big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-14big.png" alt="" style="display: none;"></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-15big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-15big.png" alt="" style="display: none;"></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-16big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-16big.png" alt="" style="display: none;"></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-17big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-17big.png" alt="" style="display: none;"></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-18big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-18big.png" alt="" style="display: none;"></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-19big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-19big.png" alt="" style="display: none;"></a>
+            <a data-fancybox="gallery" href="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-20big.png"><img src="<?php bloginfo('template_directory'); ?>/assets/img/examples_img-20big.png" alt="" style="display: none;"></a>
+          </div>
+        </div>
+      </section>
+      <!-- End Examples -->
+
+      <!-- Leedform -->
+      <section class="leedform">
+        <div class="wrapper">
+          <div class="leedform_header">
+            <h2>ОТПРАВИТЬ РАСЧЕТ</h2>
+            <p>
+              Напишите ваш e-mail на который необходимо отправить расчет, а так же номер телефона, если будет необходимо уточнить детали.
+            </p>
+          </div>
+          <div class="form">
+            <label class="placeinput">
+                <input required name="megaCalckName" type="text" />
+                <div class="place_holder">Ваше Имя <span> *</span></div>
+            </label>
+            <label class="placeinput">
+                <input required name="megaCalckMail" type="email" />
+                <div class="place_holder">Ваш e-mail <span> *</span></div>
+            </label>
+            <label class="placeinput">
+                <input required name="megaCalckPhone" type="phone" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" />
+                <div class="place_holder">Номер телефона <span> *</span></div>
+            </label>
+          </div>
+          <button class="upload_files" type="submit">Отправить</button>
+          <div class="leedform_offer-check">
+            <input type="checkbox" id="megaCalckCheck" checked>
+            <label for="megaCalckCheck"><p></p></label>
+            <p>
+              Я даю согласие на <a href="#">обработку персональных данных</a>
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- End Leedform -->
+    </form>
+    
+
+    
+    <!-- Facade Quiz -->
+    <!-- <section class="facade_quiz" style="display: none;">
+      <div class="wrapper">
+        <form id="facade_quiz_calc_form" class="facade_quiz_calc_form">
+          <div class="step_calc_now" style="display: block;">
+            <span class="close_facade_quiz_calc_form">×</span>
+            <div class="step_calc">
+              <div class="title">1. Где будет использоваться фасад</div>
+              <div class="progress">
+                <div class="prog" style="background: black;"><p style="color: white;">1</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>2</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>3</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>4</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>5</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>6</p></div>
+              </div>
+              <div class="inputs" style="margin-bottom: 50px;">
+                <label class="lab-gif">
+                  <div class="inputs_img">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/facade_quiz1_1.png" alt="">
+                  </div>
+                  <div class="inputs_select">
+                    <input type="radio" name="f1" value="Кухня" checked>
+                    <p>Кухня</p>
+                  </div>
+                </label>
+                <label class="lab-gif">
+                  <div class="inputs_img">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/facade_quiz1_2.png" alt="">
+                  </div>
+                  <div class="inputs_select">
+                    <input type="radio" name="f1" value="Шкаф">
+                    <p>Шкаф</p>
+                  </div>
+                </label>
+                <label class="lab-gif">
+                  <div class="inputs_img">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/facade_quiz1_3.png" alt="">
+                  </div>
+                  <div class="inputs_select">
+                    <input type="radio" name="f1" value="Стена">
+                    <p>Стена</p>
+                  </div>
+                </label>
+              </div>
+              <div class="foot">
+                <div class="buttons">
+                  <div class="btn btn_next">Далее</div>
+                  <div class="btn btn_back">Назад</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step_calc_now">
+            <span class="close_facade_quiz_calc_form">×</span>
+            <div class="step_calc">
+              <div class="title">2. Планируемый срок службы</div>
+              <div class="progress">
+                <div class="prog" style="background: black;"><p style="color: white;">1</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">2</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>3</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>4</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>5</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>6</p></div>
+              </div>
+              <div class="inputs">
+                <div class="inputs_facade_vertical">
+                  <div class="inputs_type_text">
+                    <input type="text" name="f2time" placeholder="Какой планируемый срок лужбы? (лет)">
+                  </div>
+                  <div class="inputs_type_text_checkbox">
+                    <span>Влагостойкость</span>
+                    <input checked type="checkbox" name="f2" value="Влагостойкость">
+                  </div>
+                </div>
+              </div>
+              <div class="foot">
+                <div class="buttons">
+                  <div class="btn btn_next">Далее</div>
+                  <div class="btn btn_back">Назад</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step_calc_now">
+            <span class="close_facade_quiz_calc_form">×</span>
+            <div class="step_calc">
+              <div class="title">3. Фрезеровка</div>
+              <div class="progress">
+                <div class="prog" style="background: black;"><p style="color: white;">1</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">2</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">3</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>4</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>5</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>6</p></div>
+              </div>
+              <div class="inputs_vertical">
+                <label class="lab-gif">
+                  <div class="inputs_select">
+                    <div class="checkbox">          
+                      <span>Без фрезеровки</span>
+                      <input type="checkbox" name="f3" value="Без фрезеровки" checked>
+                    </div>
+                  </div>
+                </label>
+                <label class="lab-gif">
+                  <div class="inputs_select">
+                    <div class="checkbox">
+                      <span>В классическом стиле</span>
+                      <input type="checkbox" name="f3" value="В классическом стиле">
+                    </div>
+                  </div>
+                </label>
+                <label class="lab-gif" style="margin-bottom: 50px;">
+                  <div class="inputs_select">
+                    <div class="checkbox">
+                      <span>В современном стиле</span>
+                      <input type="checkbox" name="f3" value="В современном стиле">
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="foot">
+                <div class="buttons">
+                  <div class="btn btn_next">Далее</div>
+                  <div class="btn btn_back">Назад</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step_calc_now">
+            <span class="close_facade_quiz_calc_form">×</span>
+            <div class="step_calc">
+              <div class="title">4. Технические характеристики</div>
+              <div class="progress">
+                <div class="prog" style="background: black;"><p style="color: white;">1</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">2</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">3</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">4</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>5</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>6</p></div>
+              </div>
+              <div class="inputs_vertical">
+                <p>Характеристики фасадов:</p>
+                <div class="inputs_vertical_spec">
+                  <input type="text" name="f4sqrt" placeholder="Общая площадь фасадов, (м.кв)">
+                  <input type="text" name="f4type" placeholder="Тип покраски">
+                  <input type="text" name="f4cop" placeholder="Кол-во отдельных элементов">
+                </div>
+              </div>
+              <div class="foot">
+                <div class="buttons">
+                  <div class="btn btn_next">Далее</div>
+                  <div class="btn btn_back">Назад</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step_calc_now">
+            <span class="close_facade_quiz_calc_form">×</span>
+            <div class="step_calc">
+              <div class="title">5. На сколько срочно нужен заказ?</div>
+              <div class="progress">
+                <div class="prog" style="background: black;"><p style="color: white;">1</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">2</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">3</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">4</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">5</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>6</p></div>
+              </div>
+              <div class="inputs_vertical">
+                <div class="inputs_vertical_time">
+                  <div class="radio">         
+                    <span>Очень срочно</span>
+                    <input type="radio" name="f5" value="Очень срочно" checked>
+                  </div>
+                  <div class="radio">
+                    <span>В течении месяца</span>
+                    <input type="radio" name="f5" value="В течении месяца">
+                  </div>
+                  <div class="radio">
+                    <span>Более 3х месяцев</span>
+                    <input type="radio" name="f5" value="Более 3х месяцев">
+                  </div>
+                  <div class="radio">
+                    <span>Более 6ти месяцев</span>
+                    <input type="radio" name="f5" value="Более 6ти месяцев">
+                  </div>
+                </div>
+              </div>
+              <div class="foot">
+                <div class="buttons">
+                  <div class="btn btn_next">Далее</div>
+                  <div class="btn btn_back">Назад</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step_calc_now">
+            <span class="close_facade_quiz_calc_form">×</span>
+            <div class="step_calc">
+              <div class="title">6. Куда отправить расчет?</div>
+              <div class="progress">
+                <div class="prog" style="background: black;"><p style="color: white;">1</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">2</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">3</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">4</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">5</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">6</p></div>
+              </div>
+              <div class="inputs_vertical">
+                <label class="lab-gif">
+                  <div class="final_inputs">
+                    <input required type="text" name="f6name" placeholder="Имя">
+                    <input required type="text" name="f6phone" placeholder="Номер телефона" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+                    <input required type="email" name="f6email" placeholder="E-MAIL" style="margin-right: 0;">
+                    <div class="final_inputs-check">
+                      <input type="checkbox" checked>
+                      <p>
+                        Я даю согласие на <a href="#">обработку персональных данных</a>
+                      </p>
+                    </div>
+                    <button type="submit" id="btn btn_facade_final_inputs">Отправить</button>
+                  </div>
+                </label>
+              </div>
+              <div class="foot">
+                <div class="buttons">
+                  <div class="btn btn_back">Назад</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section> -->
+    <!-- End Facade Quiz -->
+    <!-- Quiz -->
+    <!-- <section class="quiz" style="display: none;">
+      <div class="wrapper">
+        <form id="quiz_calc_form" class="quiz_calc_form">
+          <div class="step_calc_now" style="display: block;">
+            <span class="close_quiz_calc_form">×</span>
+            <div class="step_calc">
+              <div class="title">1. Выберите тип лестницы</div>
+              <div class="progress">
+                <div class="prog" style="background: black;"><p style="color: white;">1</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>2</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>3</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>4</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>5</p></div>
+              </div>
+              <div class="inputs">
+                <label class="lab-gif">
+                  <div class="inputs_img">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/quiz1-1.png" alt="">
+                  </div>
+                  <div class="inputs_select">
+                    <input type="radio" name="s1" value="На деревянном каркасе" checked>
+                    <p>На деревянном каркасе</p>
+                  </div>
+                </label>
+                <label class="lab-gif">
+                  <div class="inputs_img">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/quiz1-2.png" alt="">
+                  </div>
+                  <div class="inputs_select">
+                    <input type="radio" name="s1" value="На металлическом каркасе">
+                    <p>На металлическом каркасе</p>
+                  </div>
+                </label>
+                <label class="lab-gif">
+                  <div class="inputs_img">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/quiz1-3.png" alt="">
+                  </div>
+                  <div class="inputs_select">
+                    <input type="radio" name="s1" value="На бетонном основании">
+                    <p>На бетонном основании</p>
+                  </div>
+                </label>
+              </div>
+              <div class="foot">
+                <div class="buttons">
+                  <div class="btn btn_next">Далее</div>
+                  <div class="btn btn_back">Назад</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step_calc_now">
+            <span class="close_quiz_calc_form">×</span>
+            <div class="step_calc">
+              <div class="title">2. Размеры</div>
+              <div class="progress">
+                <div class="prog" style="background: black;"><p style="color: white;">1</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">2</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>3</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>4</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>5</p></div>
+              </div>
+              <div class="inputs">
+                <div class="quiz_stairs_img">
+                  <img src="<?php bloginfo('template_directory'); ?>/assets/img/quiz_stairs.png" alt="">
+                </div>
+                <div class="inputs_spec">
+                  <p>Характеристики лестницы:</p>
+                  <input type="text" name="sizeOpening" placeholder="Размеры проема (А х B мм)">
+                  <input type="text" name="heightStairs" placeholder="Высота лестницы (D, мм)" style="margin-right: 0;">
+                  <input type="text" name="thicknessSlab" placeholder="Толщина перекрытия (С, мм)">
+                  <input type="text" name="widthMarch" placeholder="Ширина марша (Е, мм)" style="margin-right: 0;">
+                  <textarea name="message" id="" cols="100" rows="5" placeholder="Дополнительные данные"></textarea>
+                </div>
+              </div>
+              <div class="foot">
+                <div class="buttons">
+                  <div class="btn btn_next">Далее</div>
+                  <div class="btn btn_back">Назад</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step_calc_now">
+            <span class="close_quiz_calc_form">×</span>
+            <div class="step_calc">
+              <div class="title">3. Вид лестницы</div>
+              <div class="progress">
+                <div class="prog" style="background: black;"><p style="color: white;">1</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">2</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">3</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>4</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>5</p></div>
+              </div>
+              <div class="inputs">
+                <label class="lab-gif">
+                  <div class="inputs_img">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/quiz3-1.png" alt="">
+                  </div>
+                  <div class="inputs_select">
+                    <input type="radio" name="s3" value="Одномаршевая лестница" checked>
+                    <p>Одномаршевая лестница</p>
+                  </div>
+                </label>
+                <label class="lab-gif">
+                  <div class="inputs_img">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/quiz3-2.png" alt="">
+                  </div>
+                  <div class="inputs_select">
+                    <input type="radio" name="s3" value="Двухмаршевая с площадкой">
+                    <p>Двухмаршевая с площадкой</p>
+                  </div>
+                </label>
+                <label class="lab-gif">
+                  <div class="inputs_img">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/quiz3-3.png" alt="">
+                  </div>
+                  <div class="inputs_select">
+                    <input type="radio" name="s3" value="Двухмаршевая с забежными ступенями">
+                    <p>Двухмаршевая с забежными ступенями</p>
+                  </div>
+                </label>
+                <label class="lab-gif">
+                  <div class="inputs_img">
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/quiz3-4.png" alt="">
+                  </div>
+                  <div class="inputs_select">
+                    <input type="radio" name="s3" value="Винтовая">
+                    <p>Винтовая</p>
+                  </div>
+                </label>
+              </div>
+              <div class="foot">
+                <div class="buttons">
+                  <div class="btn btn_next">Далее</div>
+                  <div class="btn btn_back">Назад</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step_calc_now">
+            <span class="close_quiz_calc_form">×</span>
+            <div class="step_calc">
+              <div class="title">4. Дополнительно</div>
+              <div class="progress">
+                <div class="prog" style="background: black;"><p style="color: white;">1</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">2</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">3</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">4</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style=""><p>5</p></div>
+              </div>
+              <div class="inputs_vertical">
+                <label class="lab-gif">
+                  <div class="inputs_select">
+                    <div class="checkbox">          
+                      <span>Встроить подсветку в ступени</span>
+                      <input type="checkbox" name="s4" value="Встроить подсветку в ступени" checked>
+                    </div>
+                  </div>
+                </label>
+                <label class="lab-gif">
+                  <div class="inputs_select">
+                    <div class="checkbox">
+                      <span>Зашить подступеньки</span>
+                      <input type="checkbox" name="s4" value="Зашить подступеньки">
+                    </div>
+                  </div>
+                </label>
+                <label class="lab-gif">
+                  <div class="inputs_select">
+                    <div class="checkbox">
+                      <span>Зашить подлестнечное пространство</span>
+                      <input type="checkbox" name="s4" value="Зашить подлестнечное пространство">
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="foot">
+                <div class="buttons">
+                  <div class="btn btn_next">Далее</div>
+                  <div class="btn btn_back">Назад</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step_calc_now">
+            <span class="close_quiz_calc_form">×</span>
+            <div class="step_calc">
+              <div class="title">5. Куда отправить расчет?</div>
+              <div class="progress">
+                <div class="prog" style="background: black;"><p style="color: white;">1</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">2</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">3</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">4</p></div>
+                <div class="progress_hr"></div>
+                <div class="prog" style="background: black;"><p style="color: white;">5</p></div>
+              </div>
+              <div class="inputs_vertical">
+                <label class="lab-gif">
+                  <div class="final_inputs">
+                    <input required type="text" name="name" placeholder="Имя">
+                    <input required type="text" name="phone" placeholder="Номер телефона" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+                    <input required type="email" name="email" placeholder="E-MAIL" style="margin-right: 0;">
+                    <div class="final_inputs-check">
+                      <input type="checkbox" checked>
+                      <p>
+                        Я даю согласие на <a href="#">обработку персональных данных</a>
+                      </p>
+                    </div>
+                    <button type="submit" id="btn btn_final_inputs">Отправить</button>
+                  </div>
+                </label>
+              </div>
+              <div class="foot">
+                <div class="buttons">
+                  <div class="btn btn_back">Назад</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section> -->
+    <!-- End Quiz -->
+    <!-- Facades Calc -->
+    <!-- <section class="facadesCalc" style="display: none;">
+      <div class="wrapper">
+        <div class="facadesCalc_header">
+          <h2>Калькулятор</h2>
+          <p>
+            Вы получите расчет фасада по Вашему индивидуальному проекту на свою электронную почту.
+          </p>
+        </div>
+        <div class="facade_calc_form">
+          <form>
+            <div class="facade_calc_form_left">
+              <p>Вы можете добавить до 5 фасадов</p>
+              <div class="facade_tabs">
+                <div class="facade_tab" data-tab-name="js_tab1">
+                  <p>Фасад №1</p>
+                </div>
+              </div>
+              <div class="facade_btn_more" id="facade_btn">
+                <p>Добавить фасад</p>
+              </div>
+            </div>
+            <div class="facade_calc_form_right">
+              <div class="facade_inputs" >
+                <p>Выберите необходимые параметры:</p>
+                <div class="facade_input js_tab1">
+                  <select class="js_input1" name="facadeMaterial">
+                    <option>Материал:</option>
+                    <option>МДФ</option>
+                    <option>ДСП</option>
+                    <option>Акрил</option>
+                    <option>HPL</option>
+                    <option>Массив</option>
+                    <option>Шпон</option>
+                  </select>
+                  <select class="js_input2" name="facadeView">
+                    <option>Вид фасада:</option>
+                    <option>Для кухни</option>
+                    <option>Для шкафа</option>
+                    <option>Стеновые панели</option>
+                  </select>
+                  <select class="js_input3" name="facadeType">
+                    <option>Тип обработки:</option>
+                    <option>Современные</option>
+                    <option>Классические</option>
+                    <option>Дизайнерские</option>
+                  </select>
+                  <select class="js_input4" name="facadePaint">
+                    <option>Покраска:</option>
+                    <option>Глянцевая эмаль</option>
+                    <option>Кракелюр</option>
+                    <option>Лакирование</option>
+                    <option>Матовая эмаль</option>
+                    <option>Мрамор</option>
+                    <option>Патина</option>
+                  </select>
+                  <input class="js_input5" placeholder="Длина" name="facadeLenght">
+                  <input class="js_input6" placeholder="Ширина" name="facadeWidth">
+                </div>
+              </div>
+              <div class="facade_contacts">
+                <p>Контактная информация:</p>
+                <div class="facade_contacts_inputs">
+                  <input required type="text" name="nameFacadeCalck" placeholder="Имя *">
+                  <br>
+                  <input required type="email" name="emailFacadeCalck" placeholder="E-MAIL *">
+                  <input required type="phone" name="phoneFacadeCalck" placeholder="Номер телефона *" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" style="margin-right: 0;">
+                </div>
+              </div>
+              <div class="facade_submit">
+                <input type="checkbox" checked>
+                <p>
+                  Я даю согласие на <a href="#">обработку персональных данных</a>
+                </p>
+                <button type="submit">Получить расчет</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section> -->
+    <!-- End Facades Calc -->
+    <!-- How We Work -->
+    <!-- <section class="howWeWork" style="display: none;">
+      <div class="wrapper">
+        <div class="howWeWork__btn">
+          <img src="<?php bloginfo('template_directory'); ?>/assets/img/howWeWork_img.png" alt="">
+          <button type="button" id="btn_modal_Callback2">Консультация специалиста</button>
+        </div>
+        <div class="howWeWork__info">
+          <div class="howWeWork__info_item">
+            <img src="<?php bloginfo('template_directory'); ?>/assets/img/howWeWork__info-img-1.png" alt="">
+            <div class="howWeWork__info_item-txt">
+              <h4>заявка</h4>
+              <p>
+                Для начала позвоните нам <br> по телефону или оставьте заявку на сайте.
+              </p>
+            </div>
+          </div>
+          <div class="howWeWork__info_item">
+            <img src="<?php bloginfo('template_directory'); ?>/assets/img/howWeWork__info-img-2.png" alt="">
+            <div class="howWeWork__info_item-txt">
+              <h4>замер</h4>
+              <p>
+                Наш инженер-проектировщик бесплатно сделает <br> выезд к вам на замер.
+              </p>
+            </div>
+          </div>
+          <div class="howWeWork__info_item">
+            <img src="<?php bloginfo('template_directory'); ?>/assets/img/howWeWork__info-img-3.png" alt="">
+            <div class="howWeWork__info_item-txt">
+              <h4>проектирование</h4>
+              <p>
+                Спроектируем Вашу будущую лестницу с <br> 3D-визуализацией.
+              </p>
+            </div>
+          </div>
+          <div class="howWeWork__info_item">
+            <img src="<?php bloginfo('template_directory'); ?>/assets/img/howWeWork__info-img-4.png" alt="">
+            <div class="howWeWork__info_item-txt">
+              <h4>производство</h4>
+              <p>
+                Облицуем лестницу и доведем каждую деталь до <br> совершенства.
+              </p>
+            </div>
+          </div>
+          <div class="mob_howWeWork__btn">
+            <button type="button" id="mob_btn_modal_Callback2">Консультация специалиста</button>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- End How We Work -->
+    <!-- Modal callback -->
+    <!-- <section class="modal_Callback2">
+      <div class="wrapper">
+        <div id="my_modalCallback2" class="modalCallback2">
+          <div class="modal_content">
+            <div class="modal_content_title">
+              <span class="close_modal_Callback2">×</span>
+              <h2>Заказать звонок</h2>
+            </div>
+            <div class="modal_hr"></div>
+            <form>
+              <div class="modal_content_body">
+                <div class="form_control">
+                  <label>
+                    <span>
+                      Ваше имя <span class="star">*</span>
+                    </span>
+                    <input required type="text" name="nameHWW" class="inputtext" placeholder="Ваше имя">
+                  </label>
+                </div>
+                <div class="form_control">
+                  <label>
+                    <span>
+                      Телефон <span class="star">*</span>
+                    </span>
+                    <input required type="phone" name="phoneHWW" class="inputtext" placeholder="+7 812 123 45 67" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+                  </label>
+                </div>
+              </div>
+              <div class="modal_footer">
+                <div class="licence_block">
+                  <input type="checkbox" name="option1" value="a111" checked>
+                  <label>Я согласен на <a href="#">обработку персональных данных</a></label>
+                </div>
+                <button type="submit">Отправить</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- End Modal callback -->
+    <!-- Modal callback 2 -->
+    <!-- <section class="mob_modal_Callback2">
+      <div class="wrapper">
+        <div id="mob_my_modalCallback2" class="mob_modalCallback2">
+          <div class="modal_content">
+            <div class="modal_content_title">
+              <span class="mob_close_modal_Callback2">×</span>
+              <h2>Заказать звонок</h2>
+            </div>
+            <div class="modal_hr"></div>
+            <form>
+              <div class="modal_content_body">
+                <div class="form_control">
+                  <label>
+                    <span>
+                      Ваше имя <span class="star">*</span>
+                    </span>
+                    <input required type="text" name="nameHWWM" class="inputtext" placeholder="Ваше имя">
+                  </label>
+                </div>
+                <div class="form_control">
+                  <label>
+                    <span>
+                      Телефон <span class="star">*</span>
+                    </span>
+                    <input required type="phone" name="phoneHWWM" class="inputtext" placeholder="+7 812 123 45 67" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+                  </label>
+                </div>
+              </div>
+              <div class="modal_footer">
+                <button type="submit">Отправить</button>
+                <div class="licence_block">
+                  <input type="checkbox" name="option1" value="a111" checked>
+                  <label>Я согласен на <a href="#">обработку персональных данных</a></label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- End Modal callback 2 -->
+
+  </article>
+
+</main>
